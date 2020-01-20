@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  url-shortener:
+    container_name: node-url-shorten
+    restart: always
+    build: .
+    env_file: .env
+    volumes:
+      - '${LOG_VOLUME}:/usr/src/node-url-shorten/logs'
+    ports:
+      -  '${PORT}:${PORT}'
